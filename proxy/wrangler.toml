@@ -1,0 +1,28 @@
+name = "feednest-rss-proxy"
+main = "src/index.ts"
+compatibility_date = "2026-01-01"
+
+# Free plan: Workers Free includes 100,000 requests/day and 10 ms CPU per
+# request. This worker does no parsing and no caching, so it stays well inside
+# that budget for personal use. Verify current limits before relying on them:
+# https://developers.cloudflare.com/workers/platform/limits/
+#
+# Deploy with:
+#   cd proxy
+#   npm install
+#   npx wrangler deploy
+#
+# Then paste the printed URL into FeedNest → Settings → Proxy URL.
+
+[vars]
+# "*" allows any origin. Narrow this to your own deployment if you prefer,
+# e.g. "https://iiiiiiiiiiiiikk.github.io".
+ALLOWED_ORIGINS = "*"
+RATE_LIMIT_PER_MINUTE = "120"
+MAX_BYTES = "2097152"
+
+[observability]
+enabled = true
+
+# The worker does not bind any storage: no KV, no D1, no R2, no cache.
+# It must never persist article bodies or user subscriptions.

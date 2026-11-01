@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns="http://purl.org/rss/1.0/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel rdf:about="https://rdf.example.net/">
+    <title>Nest RDF Feed</title>
+    <link>https://rdf.example.net/</link>
+    <description>RSS 1.0 (RDF) sample used by the FeedNest test suite.</description>
+    <items>
+      <rdf:Seq>
+        <rdf:li rdf:resource="https://rdf.example.net/items/one"/>
+      </rdf:Seq>
+    </items>
+  </channel>
+  <item rdf:about="https://rdf.example.net/items/one">
+    <title>An item carried by RSS 1.0</title>
+    <link>https://rdf.example.net/items/one</link>
+    <description>RSS 1.0 uses RDF and dc:date instead of pubDate.</description>
+    <dc:date>2025-05-20T07:45:00Z</dc:date>
+    <dc:creator>Priya Raman</dc:creator>
+  </item>
+</rdf:RDF>

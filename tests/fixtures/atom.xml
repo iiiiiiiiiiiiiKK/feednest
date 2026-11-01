@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <title>Nest Atom Notes</title>
+  <subtitle>Atom 1.0 sample used by the FeedNest test suite.</subtitle>
+  <link href="https://atom.example.org/" rel="alternate" type="text/html"/>
+  <link href="https://atom.example.org/feed.xml" rel="self" type="application/atom+xml"/>
+  <id>urn:uuid:60a76c80-d399-11d9-b93C-0003939e0af6</id>
+  <updated>2025-06-10T18:30:00Z</updated>
+  <icon>https://atom.example.org/icon.png</icon>
+  <author>
+    <name>Nest Editors</name>
+    <email>editors@atom.example.org</email>
+  </author>
+  <entry>
+    <title>Atom entry with full content</title>
+    <link rel="alternate" type="text/html" href="https://atom.example.org/entries/atom-full"/>
+    <link rel="self" href="https://atom.example.org/entries/atom-full.atom"/>
+    <id>tag:atom.example.org,2025:entry-1</id>
+    <published>2025-06-09T10:00:00Z</published>
+    <updated>2025-06-10T09:00:00Z</updated>
+    <author><name>Rin Okafor</name></author>
+    <summary>A complete Atom entry, including XHTML content.</summary>
+    <content type="html">&lt;p&gt;Atom can carry the whole article. This entry includes several paragraphs so the reader treats it as full content rather than an excerpt.&lt;/p&gt;&lt;p&gt;The body is sanitised, links open in a new tab, and images are lazy loaded. Nothing here is fetched at render time; the HTML was stored with the article when the feed refreshed.&lt;/p&gt;&lt;p&gt;That is the whole trick: parse once, store once, render cheaply.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Atom entry that only has a summary</title>
+    <link rel="alternate" href="https://atom.example.org/entries/atom-summary"/>
+    <id>tag:atom.example.org,2025:entry-2</id>
+    <updated>2025-06-08T12:12:12Z</updated>
+    <summary type="text">A short summary without a content element.</summary>
+  </entry>
+  <entry>
+    <title>Atom entry without any date</title>
+    <link rel="alternate" href="https://atom.example.org/entries/atom-nodate"/>
+    <id>tag:atom.example.org,2025:entry-3</id>
+    <content type="text">Plain text content, and the entry has no published or updated element.</content>
+  </entry>
+</feed>

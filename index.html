@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#f7f6f3" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#14140f" media="(prefers-color-scheme: dark)" />
+    <title>FeedNest — Your corner of the internet</title>
+    <meta
+      name="description"
+      content="FeedNest is a free, local-first RSS and Atom reader. Your subscriptions and reading history stay in your own browser. No account, no tracking, no algorithm."
+    />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="apple-touch-icon" href="./favicon.svg" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="FeedNest" />
+    <meta property="og:title" content="FeedNest — Your corner of the internet" />
+    <meta
+      property="og:description"
+      content="A local-first RSS reader that keeps your subscriptions and reading history in your own browser."
+    />
+    <meta property="og:type" content="website" />
+    <script>
+      // Apply the stored theme before first paint to avoid a flash of the wrong theme.
+      try {
+        var raw = localStorage.getItem('feednest.theme') || 'system'
+        var dark =
+          raw === 'dark' ||
+          (raw === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        document.documentElement.classList.toggle('dark', dark)
+        document.documentElement.style.colorScheme = dark ? 'dark' : 'light'
+      } catch {
+        /* localStorage unavailable */
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

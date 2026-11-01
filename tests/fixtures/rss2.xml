@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:media="http://search.yahoo.com/mrss/"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>Nest Test Journal</title>
+    <link>https://nest.example.com/</link>
+    <description>RSS 2.0 sample used by the FeedNest test suite.</description>
+    <language>en-us</language>
+    <image>
+      <url>https://nest.example.com/logo.png</url>
+      <title>Nest Test Journal</title>
+      <link>https://nest.example.com/</link>
+    </image>
+    <item>
+      <title>Why local-first software feels different</title>
+      <link>https://nest.example.com/posts/local-first?utm_source=rss&amp;utm_medium=feed</link>
+      <guid isPermaLink="false">nest-post-001</guid>
+      <pubDate>Tue, 03 Jun 2025 11:05:30 GMT</pubDate>
+      <dc:creator>Avery Lin</dc:creator>
+      <description><![CDATA[<p>Ownership of data changes the shape of the product: <strong>no sync spinner</strong>, no outage page.</p>]]></description>
+      <content:encoded><![CDATA[
+        <p>Ownership of data changes the shape of the product: <strong>no sync spinner</strong>, no outage page.</p>
+        <p>When the database lives in the browser, a feed refresh is a local transaction. That single
+        constraint removes an entire category of failure — and with it, an entire category of UI.
+        There is no "reconnecting" banner, no retry counter, no partial write you have to reconcile
+        later. The trade is obvious: your data does not follow you between devices unless you
+        export it yourself.</p>
+        <blockquote><p>Local-first is a promise about who owns the write.</p></blockquote>
+        <p>For a reader, that promise is the whole point: the list of things you meant to read is
+        small, personal, and nobody else's business.</p>
+        <ul><li>No account</li><li>No telemetry</li><li>No ranking</li></ul>
+      ]]></content:encoded>
+      <media:content url="https://nest.example.com/images/local-first.jpg" type="image/jpeg" medium="image" />
+      <category>Technology</category>
+    </item>
+    <item>
+      <title>Summary-only item with no content:encoded</title>
+      <link>https://nest.example.com/posts/summary-only</link>
+      <guid>nest-post-002</guid>
+      <pubDate>Wed, 04 Jun 2025 08:00:00 +0800</pubDate>
+      <description>Only a short excerpt is published for this item, so FeedNest must label it as a summary and link out.</description>
+    </item>
+    <item>
+      <title>Item without a GUID</title>
+      <link>https://nest.example.com/posts/no-guid/</link>
+      <pubDate>Thu, 05 Jun 2025 09:30:00 GMT</pubDate>
+      <description>This entry has no guid element at all; identity falls back to the normalised URL.</description>
+    </item>
+    <item>
+      <title>Item without a publication date</title>
+      <link>https://nest.example.com/posts/no-date</link>
+      <guid>nest-post-004</guid>
+      <description>The feed omits pubDate, so the fetch time is used and labelled as such in the reader.</description>
+    </item>
+    <item>
+      <title>Item with a broken date</title>
+      <link>https://nest.example.com/posts/broken-date</link>
+      <guid>nest-post-005</guid>
+      <pubDate>not a real date</pubDate>
+      <description>A malformed pubDate must not break parsing of the whole document.</description>
+    </item>
+    <item>
+      <title>Relative links and unsafe markup</title>
+      <link>https://nest.example.com/posts/relative</link>
+      <guid>nest-post-006</guid>
+      <pubDate>Fri, 06 Jun 2025 12:00:00 GMT</pubDate>
+      <description><![CDATA[
+        <p>Relative <a href="/about">links</a> and <img src="/img/chart.png" onerror="alert(1)" alt="chart"> should be made absolute and stripped of handlers.</p>
+        <script>window.__pwned = true</script>
+      ]]></description>
+    </item>
+  </channel>
+</rss>

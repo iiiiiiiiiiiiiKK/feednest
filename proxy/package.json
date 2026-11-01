@@ -1,0 +1,16 @@
+{
+  "name": "feednest-proxy",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Optional Cloudflare Worker that makes CORS-blocked RSS/Atom feeds readable from the browser.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

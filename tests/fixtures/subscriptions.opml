@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>Imported subscriptions</title>
+  </head>
+  <body>
+    <outline text="Technology" title="Technology">
+      <outline type="rss" text="Nest Test Journal" title="Nest Test Journal"
+               xmlUrl="https://nest.example.com/rss.xml" htmlUrl="https://nest.example.com/" />
+      <outline type="rss" text="Nest Atom Notes" title="Nest Atom Notes"
+               xmlUrl="https://atom.example.org/feed.xml" htmlUrl="https://atom.example.org/" />
+    </outline>
+    <outline text="Blogs" title="Blogs">
+      <outline text="Nested group">
+        <outline type="rss" text="Deep feed" xmlUrl="https://deep.example.org/feed" />
+      </outline>
+    </outline>
+    <outline type="rss" text="Loose feed" xmlUrl="https://loose.example.net/rss" />
+    <outline type="rss" text="Duplicate of Nest" xmlUrl="https://nest.example.com/rss.xml?utm_source=opml" />
+    <outline type="rss" text="Broken entry" xmlUrl="not a url at all" />
+    <outline text="A folder with no feeds" />
+  </body>
+</opml>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+  <channel>
+    <title>Broken feed</title>
+    <item>
+      <title>This document is not well formed
+    </item>
+  </channel>
+</rss>
