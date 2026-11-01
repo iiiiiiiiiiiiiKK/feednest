@@ -210,6 +210,14 @@ Playwright runs two projects — desktop Chromium and an iPhone viewport — aga
 a local fixture server (`scripts/fixture-server.mjs`) that serves feeds with and
 without CORS headers, so no test depends on a third-party feed being online.
 
+The deployed site can be smoke-tested directly:
+
+```bash
+node scripts/verify-production.mjs
+# 13 checks: page shell, real CORS feed, star/read persistence after reload,
+# console errors, X link, mobile overflow, mobile reader full-screen
+```
+
 ## Privacy and security
 
 - No account, no analytics, no ads, no telemetry, no third-party requests beyond

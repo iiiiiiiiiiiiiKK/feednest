@@ -131,6 +131,15 @@ npm run test:e2e     # 先构建，再跑 Playwright
 
 E2E 使用本地 fixture 服务器（`scripts/fixture-server.mjs`）同时提供带与不带 CORS 头的订阅源，测试不依赖任何第三方站点在线。
 
+线上站点可直接复验：
+
+```bash
+node scripts/verify-production.mjs
+# 13 项检查：页面外壳、真实跨域订阅源、收藏/已读在刷新后仍保留、
+# 控制台错误、X 链接、移动端横向溢出、移动端阅读器全屏
+```
+
+
 ## 隐私与安全
 
 - 无账号、无统计埋点、无广告、无遥测；除了你订阅的源之外不发起第三方请求。
