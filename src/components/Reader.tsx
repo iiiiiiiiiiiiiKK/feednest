@@ -28,7 +28,7 @@ interface ReaderProps {
 }
 
 export function Reader({ articleId, onClose, className }: ReaderProps) {
-  const { t, locale, settings, pushToast, openArticleId, setOpenArticleId } = useApp()
+  const { t, locale, settings, pushToast, setOpenArticleId } = useApp()
   const library = useLibrary()
   const article = articleId ? library.articles.find((row) => row.id === articleId) ?? null : null
   const body = useLiveQuery(async () => {
@@ -191,7 +191,7 @@ export function Reader({ articleId, onClose, className }: ReaderProps) {
           <hr className="my-6 border-line" />
 
           {article.contentKind === 'summary' ? (
-            <div className="mb-6 flex alignItems-start gap-2.5 rounded-lg border border-line bg-inset px-3.5 py-3 text-[12.5px] leading-relaxed text-ink-muted">
+            <div className="mb-6 flex items-start gap-2.5 rounded-lg border border-line bg-inset px-3.5 py-3 text-[12.5px] leading-relaxed text-ink-muted">
               <Info size={15} className="mt-0.5 shrink-0 text-accent" />
               <div>
                 {t('article.summaryNotice')}
@@ -261,9 +261,6 @@ export function Reader({ articleId, onClose, className }: ReaderProps) {
           ) : null}
         </div>
       </div>
-
-      {/* Keyboard hint is shown once per session at the bottom of the reader. */}
-      {openArticleId ? null : null}
     </article>
   )
 }
